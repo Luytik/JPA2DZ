@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="597.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.owl.jpa2dz.MainWindowController">
+   <children>
+      <Label layoutX="232.0" layoutY="27.0" text="Користувач:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="userNameLbl" layoutX="348.0" layoutY="26.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="93.0" text="UAH:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="133.0" text="USD:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="174.0" text="Euro:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="uahLbl" layoutX="168.0" layoutY="93.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="usdLbl" layoutX="168.0" layoutY="133.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="euroLbl" layoutX="168.0" layoutY="174.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="142.0" layoutY="56.0" text="Гаманець">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="uahTextF" layoutX="232.0" layoutY="91.0" prefHeight="25.0" prefWidth="100.0" />
+      <TextField fx:id="usdTextF" layoutX="232.0" layoutY="131.0" prefHeight="25.0" prefWidth="100.0" />
+      <TextField fx:id="euroTextF" layoutX="232.0" layoutY="172.0" prefHeight="25.0" prefWidth="100.0" />
+      <Button fx:id="uahBtn" layoutX="352.0" layoutY="91.0" mnemonicParsing="false" onAction="#uahAdd" text="Поповнити" />
+      <Button fx:id="usdBtn" layoutX="352.0" layoutY="131.0" mnemonicParsing="false" onAction="#usdAdd" text="Поповнити" />
+      <Button fx:id="euroBtn" layoutX="352.0" layoutY="172.0" mnemonicParsing="false" onAction="#euroAdd" text="Поповнити" />
+      <Label layoutX="213.0" layoutY="263.0" text="Обмін валют">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="305.0" text="Перерахувати з гривневого рахунку на" />
+      <ChoiceBox fx:id="fromChoiceBox" layoutX="112.0" layoutY="353.0" prefHeight="25.0" prefWidth="57.0" />
+      <ChoiceBox fx:id="toChoiceBox" layoutX="255.0" layoutY="303.0" prefHeight="25.0" prefWidth="57.0" />
+      <Label layoutX="326.0" layoutY="307.0" text="суму" />
+      <TextField fx:id="valueToF" layoutX="362.0" layoutY="303.0" prefHeight="25.0" prefWidth="78.0" />
+      <Button fx:id="fromAUHtoBtb" layoutX="464.0" layoutY="303.0" mnemonicParsing="false" onAction="#fromUAHto" text="Перевести" />
+      <Label layoutX="16.0" layoutY="547.0" text="Курс долара:" />
+      <Label layoutX="166.0" layoutY="547.0" text="Курс євро:" />
+      <Label layoutX="319.0" layoutY="547.0" text="Курс біткоіна до долара:" />
+      <Label fx:id="rateUSD" layoutX="89.0" layoutY="547.0" text="Label" />
+      <Label fx:id="rateEURO" layoutX="232.0" layoutY="547.0" text="Label" />
+      <Label fx:id="rateBTC" layoutX="472.0" layoutY="547.0" text="Label" />
+      <Label layoutX="105.0" layoutY="214.0" text="BTC:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="btcLbl" layoutX="170.0" layoutY="214.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="btcTextF" layoutX="232.0" layoutY="212.0" prefHeight="25.0" prefWidth="100.0" />
+      <Button fx:id="btcBtn" layoutX="352.0" layoutY="212.0" mnemonicParsing="false" onAction="#btcAdd" text="Поповнити" />
+      <Label layoutX="14.0" layoutY="357.0" text="Перерахувати з " />
+      <Label layoutX="193.0" layoutY="357.0" text="на гривневий рахунок суму" />
+      <TextField fx:id="valueFromF" layoutX="362.0" layoutY="353.0" prefHeight="25.0" prefWidth="78.0" />
+      <Button fx:id="fromToUAHbtn" layoutX="464.0" layoutY="353.0" mnemonicParsing="false" onAction="#fromToUAH" prefHeight="25.0" prefWidth="75.0" text="Перевести" />
+      <ChoiceBox fx:id="usersChoiceBox" layoutX="171.0" layoutY="457.0" prefHeight="25.0" prefWidth="143.0" />
+      <Label layoutX="44.0" layoutY="431.0" text="Перерахувати з " />
+      <ChoiceBox fx:id="fromToUser" layoutX="57.0" layoutY="457.0" prefHeight="25.0" prefWidth="57.0" />
+      <Label layoutX="171.0" layoutY="431.0" text="на рахунок користувачеві" />
+      <Label layoutX="370.0" layoutY="431.0" text="суму" />
+      <TextField fx:id="valueToUsersF" layoutX="344.0" layoutY="457.0" prefHeight="25.0" prefWidth="78.0" />
+      <Line endX="453.0" layoutX="108.0" layoutY="392.0" startX="-108.0" />
+      <Line endX="401.5" layoutX="160.0" layoutY="256.0" startX="-160.0" />
+      <Label layoutX="94.0" layoutY="400.0" text="Переведення коштів на рахунок іншого користувача">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="227.0" layoutY="514.0" text="Курс валют">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Line endX="453.0" layoutX="108.0" layoutY="504.0" startX="-108.0" />
+      <Button fx:id="toAnotherUsersBtn" layoutX="464.0" layoutY="457.0" mnemonicParsing="false" onAction="#toAnotherUsers" prefHeight="25.0" prefWidth="75.0" text="Перевести" />
+      <Button fx:id="exitBtn" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" text="Вийти" />
+   </children>
+</AnchorPane>
